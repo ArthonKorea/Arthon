@@ -24,6 +24,7 @@ public class BeaconScaning extends Service implements BluetoothAdapter.LeScanCal
     //final variable
 
     //
+    static TCPClient tcpClient;
     NotificationManager Notifi_M;
     Notification Notifi ;
     Boolean runningFlag=false;
@@ -33,6 +34,7 @@ public class BeaconScaning extends Service implements BluetoothAdapter.LeScanCal
     HashMap<Integer,Boolean> alarmFlags;
     Context context;
     GcmReceiver mReceiver;
+
     Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -83,11 +85,23 @@ public class BeaconScaning extends Service implements BluetoothAdapter.LeScanCal
         // TODO: Return the communication channel to the service.
         throw new UnsupportedOperationException("Not yet implemented");
     }
-
+    public void onDestroy(){
+        super.onDestroy();
+        tcpClient.stopClient();
+    }
     public void init()
     {
         Notifi_M = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-
+        if(tcpClient==null) {
+            tcpClient = new TCPClient();
+            tcpClient.start();
+            tcpClient.handler[0] = mHandler;
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
         idMap = new HashMap<>();
         //aaaaf411-8cf1-440c-87cd-e367daf9c930
         //aaaaaaaa-8cf1-440c-87cd-e367daf9c93b
@@ -127,9 +141,13 @@ public class BeaconScaning extends Service implements BluetoothAdapter.LeScanCal
                if(!alarmFlags.containsKey(id))
                {
                    Log.d("Debug","Contains2");
-                   alarmFlags.put(id,true);
+
+
+
+                   //alarmFlags.put(id,true);
+                   tcpClient.sendMessage("Hello World!");
                    final int param = id;
-                   HTTPConnector.getDatas("id="+param,"init",param+"",mHandler);
+                   //HTTPConnector.getDatas("id="+param,"init",param+"",mHandler);
 
                }
            }

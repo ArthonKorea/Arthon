@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     Context context;
     MainActivity myActivity;
+    Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +21,16 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                context.startService(new Intent(context,BeaconScaning.class));
+                intent = new Intent(context,BeaconScaning.class);
+                context.startService(intent);
+            }
+        });
+        Button btn2 = (Button)findViewById(R.id.btn2);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(intent!=null)
+                    context.stopService(intent);
             }
         });
     }

@@ -42,6 +42,7 @@ public class ChattingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("s", "start");
+        BeaconScaning.tcpClient.handler[1] = mHandler;
         setContentView(R.layout.activity_main);
         IntentFilter intentfilter = new IntentFilter();
         intentfilter.addAction("root");
