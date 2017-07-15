@@ -24,6 +24,7 @@ public class TCPClient extends Thread {
     private String serverMessage;
     private boolean mRun = true;
     private PrintWriter out;
+    int PORT=0;
     public String Message ="";
     public static Handler handler[]=new Handler[2];
     public void sendMessage(String message) {
@@ -39,7 +40,10 @@ public class TCPClient extends Thread {
         }
 
     }
-
+    TCPClient (int port)
+    {
+        this.PORT = port;
+    }
 
     public void stopClient() {
         mRun = false;
@@ -56,7 +60,7 @@ public class TCPClient extends Thread {
             Log.e("TCP Client", "C: Connecting...");
 
             //create a socket to make the connection with the server
-            Socket socket = new Socket(serverAddr, SERVERPORT);
+            Socket socket = new Socket(serverAddr, PORT);
 
             try {
 

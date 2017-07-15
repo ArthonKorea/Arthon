@@ -81,21 +81,22 @@ public class BeaconScaning extends Service implements BluetoothAdapter.LeScanCal
     }
     public void onDestroy(){
         super.onDestroy();
-        tcpClient.stopClient();
+//        tcpClient.stopClient();
     }
     public void init()
     {
         Notifi_M = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        /*
         if(tcpClient==null) {
-            tcpClient = new TCPClient();
+            tcpClient = new TCPClient(8001);
             tcpClient.start();
             tcpClient.handler[0] = mHandler;
             try {
-                Thread.sleep(5000);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }
+        }*/
         idMap = new HashMap<>();
         //aaaaf411-8cf1-440c-87cd-e367daf9c930
         //aaaaaaaa-8cf1-440c-87cd-e367daf9c93b
@@ -129,13 +130,14 @@ public class BeaconScaning extends Service implements BluetoothAdapter.LeScanCal
             Log.d("Debug",beaconID);
            if(idMap.containsKey(beaconID))
            {
-               int id = idMap.get(beaconID);
+               final int id = idMap.get(beaconID);
 
                Log.d("Debug","Contains"+!alarmFlags.containsKey(id));
                if(!alarmFlags.containsKey(id))
                {
                    Log.d("Debug","Contains2");
                    alarmFlags.put(id,true);
+                   /*
                    Thread thread = new Thread(new Runnable() {
                        @Override
                        public void run() {
@@ -143,10 +145,14 @@ public class BeaconScaning extends Service implements BluetoothAdapter.LeScanCal
                            tcpClient.sendMessage("init");
                        }
                    });
-                   thread.start();
-                   final int param = id;
-                   //HTTPConnector.getDatas("id="+param,"init",param+"",mHandler);
-
+                   thread.start();*/
+                   HTTPConnector.getDatas("msg=init","init","",mHandler);
+                   mHandler.postDelayed(new Runnable() {
+                       @Override
+                       public void run() {
+                           alarmFlags.remove(id);
+                       }
+                   },5*6*10000);
                }
            }
 

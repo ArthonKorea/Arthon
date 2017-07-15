@@ -44,9 +44,11 @@ public class ChattingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("s", "start");
+        /*
         client = new TCPClient();
         client.handler[1] = mHandler;
         client.start();
+        */
         setContentView(R.layout.activity_main);
         IntentFilter intentfilter = new IntentFilter();
         intentfilter.addAction("root");
@@ -73,14 +75,15 @@ public class ChattingActivity extends AppCompatActivity {
             @Override
             public boolean sendMessage(final ChatMessage chatMessage) {
                 Log.d("msg", chatMessage.getMessage());
+                /*
                 Thread thread=new Thread(new Runnable() {
                     @Override
                     public void run() {
                         client.sendMessage("request/"+chatMessage.getMessage());
                     }
                 });
-                thread.start();
-                //HTTPConnector.getDatas("msg="+chatMessage.getMessage(),"root", "1", mHandler);
+                thread.start();*/
+                HTTPConnector.getDatas("msg="+"request/"+chatMessage.getMessage(),"root", "1", mHandler);
                 return true;
             }
         });

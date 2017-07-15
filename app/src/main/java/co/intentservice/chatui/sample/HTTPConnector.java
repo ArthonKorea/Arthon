@@ -30,15 +30,15 @@ public class HTTPConnector extends Thread{
                 String Result="";
                 URL targetURL = null;
                 try {
-                    Log.d("연결중","입니다");
-                    targetURL = new URL("http://172.20.10.5:8000/");
+                    Log.d("연결중123","입니다");
+                    targetURL = new URL("http://192.168.10.32:8000");
 
                     URLConnection urlConn = targetURL.openConnection();
                     HttpURLConnection hurlc = (HttpURLConnection) urlConn;
                     // 헤더값을 설정한다.
                     hurlc.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
                     // 전달 방식을 설정한다. POST or GET, 기본값은 GET 이다.
-                    hurlc.setRequestMethod("GET");
+                    hurlc.setRequestMethod("POST");
                     // 서버로 데이터를 전송할 수 있도록 한다. GET방식이면 사용될 일이 없으나, true로
                     // 설정하면 자동으로 POST로 설정된다. 기본값은 false이다.
                     hurlc.setDoOutput(true);
@@ -63,8 +63,8 @@ public class HTTPConnector extends Thread{
                     in.close();
 
 
-                    String data = Key+"/"+Result;
-                    Message msg = handler.obtainMessage(1, (String)data);
+
+                    Message msg = handler.obtainMessage(1, (String)Result);
                     handler.sendMessage(msg);
 
                     Log.d("BC",Result);

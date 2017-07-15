@@ -62,19 +62,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChattingActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ChattingActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/co/intentservice/chatui/sample/ChattingActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="623">
-              <caret line="85" column="9" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
+            <state relative-caret-position="198">
+              <caret line="50" column="10" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#811#1050#0" expanded="true" />
                 <element signature="e#1049#1050#0" expanded="true" />
-                <element signature="e#2283#2904#0" expanded="true" />
-                <element signature="e#2513#2720#0" expanded="true" />
-                <element signature="e#2719#2720#0" expanded="true" />
-                <element signature="e#2903#2904#0" expanded="true" />
+                <element signature="e#2305#2956#0" expanded="true" />
+                <element signature="e#2955#2956#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -96,10 +94,12 @@
       <file leaf-file-name="TCPClient.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/co/intentservice/chatui/sample/TCPClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1650">
-              <caret line="104" column="16" selection-start-line="104" selection-start-column="16" selection-end-line="104" selection-end-column="16" />
+            <state relative-caret-position="-14">
+              <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1225#1226#0" expanded="true" />
+                <element signature="e#1257#1258#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -134,23 +134,23 @@
       <file leaf-file-name="BeaconScaning.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/co/intentservice/chatui/sample/BeaconScaning.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="137" column="19" selection-start-line="137" selection-start-column="19" selection-end-line="137" selection-end-column="19" />
+            <state relative-caret-position="87">
+              <caret line="83" column="2" selection-start-line="83" selection-start-column="2" selection-end-line="83" selection-end-column="2" />
               <folding>
                 <element signature="e#1085#2698#0" expanded="true" />
                 <element signature="e#2697#2698#0" expanded="true" />
-                <element signature="e#4889#5086#0" expanded="true" />
-                <element signature="e#5085#5086#0" expanded="true" />
+                <element signature="e#5287#5475#0" expanded="true" />
+                <element signature="e#5474#5475#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HTTPConnector.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HTTPConnector.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/co/intentservice/chatui/sample/HTTPConnector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="66" column="19" selection-start-line="66" selection-start-column="19" selection-end-line="67" selection-end-column="45" />
+            <state relative-caret-position="-351">
+              <caret line="33" column="65" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -3084,13 +3084,13 @@
       <list>
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/co/intentservice/chatui/sample/HTTPConnector.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/co/intentservice/chatui/sample/Client.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/co/intentservice/chatui/sample/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/co/intentservice/chatui/sample/BeaconScaning.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/co/intentservice/chatui/sample/TCPClient.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/co/intentservice/chatui/sample/ChattingActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/co/intentservice/chatui/sample/BeaconScaning.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/co/intentservice/chatui/sample/HTTPConnector.java" />
       </list>
     </option>
   </component>
@@ -3580,7 +3580,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3849821" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5625745" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -3649,10 +3649,8 @@
             <element signature="imports" expanded="true" />
             <element signature="e#811#1050#0" expanded="true" />
             <element signature="e#1049#1050#0" expanded="true" />
-            <element signature="e#2283#2904#0" expanded="true" />
-            <element signature="e#2513#2720#0" expanded="true" />
-            <element signature="e#2719#2720#0" expanded="true" />
-            <element signature="e#2903#2904#0" expanded="true" />
+            <element signature="e#2305#2956#0" expanded="true" />
+            <element signature="e#2955#2956#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3664,8 +3662,8 @@
           <folding>
             <element signature="e#1085#2698#0" expanded="true" />
             <element signature="e#2697#2698#0" expanded="true" />
-            <element signature="e#4889#5086#0" expanded="true" />
-            <element signature="e#5085#5086#0" expanded="true" />
+            <element signature="e#5287#5475#0" expanded="true" />
+            <element signature="e#5474#5475#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3702,10 +3700,8 @@
             <element signature="imports" expanded="true" />
             <element signature="e#811#1050#0" expanded="true" />
             <element signature="e#1049#1050#0" expanded="true" />
-            <element signature="e#2283#2904#0" expanded="true" />
-            <element signature="e#2513#2720#0" expanded="true" />
-            <element signature="e#2719#2720#0" expanded="true" />
-            <element signature="e#2903#2904#0" expanded="true" />
+            <element signature="e#2305#2956#0" expanded="true" />
+            <element signature="e#2955#2956#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3717,8 +3713,8 @@
           <folding>
             <element signature="e#1085#2698#0" expanded="true" />
             <element signature="e#2697#2698#0" expanded="true" />
-            <element signature="e#4889#5086#0" expanded="true" />
-            <element signature="e#5085#5086#0" expanded="true" />
+            <element signature="e#5287#5475#0" expanded="true" />
+            <element signature="e#5474#5475#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3755,10 +3751,8 @@
             <element signature="imports" expanded="true" />
             <element signature="e#811#1050#0" expanded="true" />
             <element signature="e#1049#1050#0" expanded="true" />
-            <element signature="e#2283#2904#0" expanded="true" />
-            <element signature="e#2513#2720#0" expanded="true" />
-            <element signature="e#2719#2720#0" expanded="true" />
-            <element signature="e#2903#2904#0" expanded="true" />
+            <element signature="e#2305#2956#0" expanded="true" />
+            <element signature="e#2955#2956#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3770,8 +3764,8 @@
           <folding>
             <element signature="e#1085#2698#0" expanded="true" />
             <element signature="e#2697#2698#0" expanded="true" />
-            <element signature="e#4889#5086#0" expanded="true" />
-            <element signature="e#5085#5086#0" expanded="true" />
+            <element signature="e#5287#5475#0" expanded="true" />
+            <element signature="e#5474#5475#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3796,14 +3790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/co/intentservice/chatui/sample/HTTPConnector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="66" column="19" selection-start-line="66" selection-start-column="19" selection-end-line="67" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -3852,42 +3838,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/co/intentservice/chatui/sample/BeaconScaning.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="137" column="19" selection-start-line="137" selection-start-column="19" selection-end-line="137" selection-end-column="19" />
-          <folding>
-            <element signature="e#1085#2698#0" expanded="true" />
-            <element signature="e#2697#2698#0" expanded="true" />
-            <element signature="e#4889#5086#0" expanded="true" />
-            <element signature="e#5085#5086#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/co/intentservice/chatui/sample/TCPClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1650">
-          <caret line="104" column="16" selection-start-line="104" selection-start-column="16" selection-end-line="104" selection-end-column="16" />
+        <state relative-caret-position="-14">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1225#1226#0" expanded="true" />
+            <element signature="e#1257#1258#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/co/intentservice/chatui/sample/ChattingActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="623">
-          <caret line="85" column="9" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
+        <state relative-caret-position="198">
+          <caret line="50" column="10" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#811#1050#0" expanded="true" />
             <element signature="e#1049#1050#0" expanded="true" />
-            <element signature="e#2283#2904#0" expanded="true" />
-            <element signature="e#2513#2720#0" expanded="true" />
-            <element signature="e#2719#2720#0" expanded="true" />
-            <element signature="e#2903#2904#0" expanded="true" />
+            <element signature="e#2305#2956#0" expanded="true" />
+            <element signature="e#2955#2956#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/co/intentservice/chatui/sample/BeaconScaning.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="83" column="2" selection-start-line="83" selection-start-column="2" selection-end-line="83" selection-end-column="2" />
+          <folding>
+            <element signature="e#1085#2698#0" expanded="true" />
+            <element signature="e#2697#2698#0" expanded="true" />
+            <element signature="e#5287#5475#0" expanded="true" />
+            <element signature="e#5474#5475#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/co/intentservice/chatui/sample/HTTPConnector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-351">
+          <caret line="33" column="65" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="65" />
+          <folding />
         </state>
       </provider>
     </entry>
