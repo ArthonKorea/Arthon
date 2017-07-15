@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
@@ -20,6 +22,15 @@ public class ChattingActivity extends AppCompatActivity {
         chatView.addMessage(new ChatMessage(data, System.currentTimeMillis(), ChatMessage.Type.RECEIVED));
 
     }
+    Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            String returnedValue =(String)msg.obj;
+            String sub[] = returnedValue.split("/");
+            receiveMessage(sub[1]);
+
+        }
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,12 +53,14 @@ public class ChattingActivity extends AppCompatActivity {
         context=this;
         context.registerReceiver(mReceiver, intentfilter);
         chatView = (ChatView) findViewById(R.id.chat_view);
-        chatView.addMessage(new ChatMessage("Message received", System.currentTimeMillis(), ChatMessage.Type.RECEIVED));
+        String str = getIntent().getStringExtra("Data");
+        str+="";
+        chatView.addMessage(new ChatMessage(str, System.currentTimeMillis(), ChatMessage.Type.RECEIVED));
         chatView.setOnSentMessageListener(new ChatView.OnSentMessageListener() {
             @Override
             public boolean sendMessage(ChatMessage chatMessage) {
                 Log.d("msg", chatMessage.getMessage());
-                HTTPConnector.getDatas("msg="+chatMessage.getMessage(),"root", "1", context);
+                HTTPConnector.getDatas("msg="+chatMessage.getMessage(),"root", "1", mHandler);
                 return true;
             }
         });

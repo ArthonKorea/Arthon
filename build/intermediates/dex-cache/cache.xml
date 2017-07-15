@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\NamjinCho\.android\build-cache\e7a1b040697c87dbfb2eee607ddf3b87eaaa749c\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d9ecde39b460470e655de6e47c05573d2d5a8bfb">
+        <dex dex="C:\Android\Arthon\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7039ec9cc675cac1128655adfec2a4448e709343\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NamjinCho\.android\build-cache\b42e46a199f839cc7ab58b302f2c4909a4097057\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="cd83623b203ce6e77f4f1c7e38b295df89e0a6f3">
+        <dex dex="C:\Android\Arthon\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b5a98d6018651d3029fed1a84dc8f05ce26b9c7e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NamjinCho\.android\build-cache\257f00ce44e4cbec6784782662e1051de0b416d5\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="C:\Android\Arthon\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_70bdd2c37ed915711e9572e119a71094f2428998\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Android\sdks\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="C:\Android\Arthon\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.4.0_84db3743d5f161a9aa4a02b7f09d0439789a6f17\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NamjinCho\.android\build-cache\91b0a679bfe78a3d5c603fe42cb18bffecbbe00e\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="C:\Android\Arthon\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_46574fe556aa8a2d4d92cfe3580490148783a911\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NamjinCho\.android\build-cache\b1662db2fb228fd0322f8391f40565578df8ba18\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="C:\Android\Arthon\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_94c3d3ad9cce1b4aa7673ff6556de598c0f8eabe\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Android\Arthon\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b25f25565c784cc2dfbe8f8516904e7c57d25e54">
+        <dex dex="C:\Android\Arthon\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_3cdfbb66b7b14b898a23b9c7405a7cc8aab685a6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Android\Arthon\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="C:\Android\Arthon\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_ba25b7d7720e7f180a0169e798d3a8e4fb95a47d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NamjinCho\.android\build-cache\abbd33271203d4cd72f44780c743a80a9976a2a9\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="C:\Android\Arthon\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_10bbc7810061319e73da6497863ef9e551ab9670\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NamjinCho\.android\build-cache\0419e314a5758efb2a84a13f025f91e6a52d1fc8\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="C:\Android\Arthon\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f38dcadf83221af1b824c0f2329f4c3a9fc3c354\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NamjinCho\.android\build-cache\948549ecb83fe5f7546f32349690790ceffd58a8\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="dd9eaa06c2fa855d8c257e0ce700305147e9fd2b">
+        <dex dex="C:\Android\Arthon\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_4a55853a79ce3590c1b15da3f92497be828fc82b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NamjinCho\.android\build-cache\b2036e2f1572fae64b65eaf0124ae959dfd8b0de\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="C:\Android\Arthon\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b3f0b747e6d8f05bab040dea89bddabd7938ca03\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\NamjinCho\.android\build-cache\91b0a679bfe78a3d5c603fe42cb18bffecbbe00e\output\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="C:\Android\Arthon\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.4.0_ee76b94bc2d1b454fe84f6955d06db5a8e570127\classes.dex" />
+    </item>
+
+</items>

@@ -10,16 +10,17 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     Context context;
+    MainActivity myActivity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        Button btn = findViewById(R.id.btn);
-        context = getBaseContext();
+        Button btn = (Button)findViewById(R.id.btn);
+        context = this;
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startService(new Intent(context,BeaconScaning.class));
+                context.startService(new Intent(context,BeaconScaning.class));
             }
         });
     }

@@ -1,9 +1,8 @@
 package co.intentservice.chatui.sample;
 
-import android.content.Context;
-import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 
 import java.io.BufferedReader;
@@ -23,7 +22,7 @@ public class HTTPConnector extends Thread{
 
     static public Bundle MessageQue = new Bundle();
 
-    static public void getDatas(final String Params, final String PHP , final String Key,final Context context) {
+    static public void getDatas(final String Params, final String PHP , final String Key, final Handler handler) {
 
         Thread thread = new Thread(new Runnable() {
             @Override
@@ -64,10 +63,10 @@ public class HTTPConnector extends Thread{
                     in.close();
 
 
-                    Intent sendIntent = new Intent(PHP);
-                    sendIntent.putExtra("ID",Integer.parseInt(Key));
-                    sendIntent.putExtra("Data",Result);
-                    context.sendBroadcast(sendIntent);
+                    String data = Key+"/"+Result;
+                    Message msg = handler.obtainMessage(1, (String)data);
+                    handler.sendMessage(msg);
+
                     Log.d("BC",Result);
                     //MessageQue.putString(Key,Result);
                 } catch (MalformedURLException e) {

@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="waitingdots-0.2.0">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/b42e46a199f839cc7ab58b302f2c4909a4097057/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/b42e46a199f839cc7ab58b302f2c4909a4097057/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/pl.tajchert/waitingdots/0.2.0/3f6b508d48598b3da61032f7c98db5f6965c9cf2/waitingdots-0.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
