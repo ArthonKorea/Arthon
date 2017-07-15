@@ -40,38 +40,32 @@ public class BeaconScaning extends Service implements BluetoothAdapter.LeScanCal
         public void handleMessage(Message msg) {
             String returnedValue =(String)msg.obj;
             String sub[] = returnedValue.split("/");
-            final int id = Integer.parseInt(sub[0]);
+            final String id = sub[0];
 
             Log.d("BC","들어옴"+id);
-            if(alarmFlags.containsKey(id))
+            if(true)
             {
                 Log.d("BC","2들어옴"+id);
 
                 //  alarmFlags.put(id,true);
-                String data = sub[1];
+                //String data = sub[1];
                 Intent intent = new Intent(BeaconScaning.this, ChattingActivity.class);
-                intent.putExtra("Data",data);
+                intent.putExtra("Data",id);
                 PendingIntent pendingIntent = PendingIntent.getActivity(BeaconScaning.this, 0, intent,PendingIntent.FLAG_UPDATE_CURRENT);
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(BeaconScaning.this);
                 builder.setSmallIcon(R.drawable.ic_launcher_background)
                         .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.ic_close_drawable))
                         .setColor(getResources().getColor(R.color.blue))
-                        .setContentTitle("작품 "+id+"가 말을 걸어옵니다.")
+                        .setContentTitle("작품이 말을 걸어옵니다.")
                         .setContentIntent(pendingIntent)
-                        .setContentText(data)
+                        .setContentText(id)
                         .setDefaults(Notification.DEFAULT_ALL)
                         .setPriority(Notification.PRIORITY_HIGH);
 
                 builder.setAutoCancel(true);
                 NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
                 mNotificationManager.notify(0, builder.build());
-                if(ChattingActivity.inForeground)
-                mHandler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        alarmFlags.remove(id);
-                    }
-                },3000);
+
             }
 
         }
@@ -141,11 +135,15 @@ public class BeaconScaning extends Service implements BluetoothAdapter.LeScanCal
                if(!alarmFlags.containsKey(id))
                {
                    Log.d("Debug","Contains2");
+                   alarmFlags.put(id,true);
+                   Thread thread = new Thread(new Runnable() {
+                       @Override
+                       public void run() {
 
-
-
-                   //alarmFlags.put(id,true);
-                   tcpClient.sendMessage("Hello World!");
+                           tcpClient.sendMessage("init");
+                       }
+                   });
+                   thread.start();
                    final int param = id;
                    //HTTPConnector.getDatas("id="+param,"init",param+"",mHandler);
 

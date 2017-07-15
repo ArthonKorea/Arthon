@@ -13,12 +13,14 @@ import android.util.Log;
 import co.intentservice.chatui.ChatView;
 import co.intentservice.chatui.models.ChatMessage;
 
+
 public class ChattingActivity extends AppCompatActivity {
 
     Context context;
     BroadcastReceiver mReceiver;
     ChatView chatView;
     static boolean inForeground =true;
+    TCPClient client;
     public void receiveMessage(String data){
         chatView.addMessage(new ChatMessage(data, System.currentTimeMillis(), ChatMessage.Type.RECEIVED));
 
@@ -42,11 +44,13 @@ public class ChattingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("s", "start");
-        BeaconScaning.tcpClient.handler[1] = mHandler;
+        client = new TCPClient();
+        client.handler[1] = mHandler;
+        client.start();
         setContentView(R.layout.activity_main);
         IntentFilter intentfilter = new IntentFilter();
         intentfilter.addAction("root");
-        inForeground=false;
+
         mReceiver = new BroadcastReceiver(){
             @Override
             public void onReceive(Context context, Intent intent) {
@@ -67,9 +71,16 @@ public class ChattingActivity extends AppCompatActivity {
         chatView.addMessage(new ChatMessage(str, System.currentTimeMillis(), ChatMessage.Type.RECEIVED));
         chatView.setOnSentMessageListener(new ChatView.OnSentMessageListener() {
             @Override
-            public boolean sendMessage(ChatMessage chatMessage) {
+            public boolean sendMessage(final ChatMessage chatMessage) {
                 Log.d("msg", chatMessage.getMessage());
-                HTTPConnector.getDatas("msg="+chatMessage.getMessage(),"root", "1", mHandler);
+                Thread thread=new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        client.sendMessage("request/"+chatMessage.getMessage());
+                    }
+                });
+                thread.start();
+                //HTTPConnector.getDatas("msg="+chatMessage.getMessage(),"root", "1", mHandler);
                 return true;
             }
         });

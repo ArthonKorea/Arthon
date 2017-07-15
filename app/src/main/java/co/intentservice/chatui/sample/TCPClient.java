@@ -16,23 +16,28 @@ import java.net.Socket;
  */
 public class TCPClient extends Thread {
 
-    public static String SERVERIP = "172.20.10.5";
-    public static final int SERVERPORT = 8000;
+    public static String SERVERIP = "192.168.10.32";
+    public static final int SERVERPORT = 8001;
     BufferedReader in;
     String Sender;
     int flag = -1; // Login = 1 , Main = 2 , His = 3 , Child = 4 , Join = 5 , Updater = 6 , SubwayFinder = 7
     private String serverMessage;
-    private boolean mRun = false;
+    private boolean mRun = true;
     private PrintWriter out;
     public String Message ="";
     public static Handler handler[]=new Handler[2];
     public void sendMessage(String message) {
-        if (out != null && !out.checkError()) {
-            out.println(message);
-            Log.d("보내요", message);
-            Message="";
-            out.flush();
+        Message = message;
+        Log.d("msg2",Message);
+        if(!Message.equals("")) {
+            if (out != null && !out.checkError()) {
+                out.println(Message);
+                Log.d("Client 2", Message);
+                Message="";
+                out.flush();
+            }
         }
+
     }
 
 
@@ -52,7 +57,6 @@ public class TCPClient extends Thread {
 
             //create a socket to make the connection with the server
             Socket socket = new Socket(serverAddr, SERVERPORT);
-            //SocketHandler.setSocket(socket);
 
             try {
 
@@ -66,17 +70,19 @@ public class TCPClient extends Thread {
 
                 //receive the message which the server sends back
                 in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                Log.e("TCP Client", "C: Done.2");
                 boolean checker=true;
                 //in this while the client listens for the messages sent by the server
+                //serverMessage = in.readLine();
+                //Log.e("Client",serverMessage);
                 while (mRun) {
-                        serverMessage = in.readLine();
-                        //Log.e("100", serverMessage);
-                    if (serverMessage != null) {
+                    //sleep(100);
+                    serverMessage = in.readLine();
+                   // in.reset();
+                    //Log.e("100", serverMessage);
+                    if (serverMessage != null && !serverMessage.equals("")) {
                         Log.d("Message",serverMessage);
-                        checker=false;
-
-
-                        if(serverMessage.startsWith("init/"))
+                        if(serverMessage.startsWith("init"))
                         {
                             String message = serverMessage.split("/")[1];
                             android.os.Message msg = handler[0].obtainMessage(1, (String)message);
@@ -87,9 +93,9 @@ public class TCPClient extends Thread {
                             android.os.Message msg = handler[1].obtainMessage(1, (String)message);
                             handler[1].sendMessage(msg);
                         }
+
                         if(serverMessage.equals("quit"))
                             break;
-                        sendMessage("OK");
                     }
                     Log.d("Client","inputWaiting");
                     serverMessage = null;
