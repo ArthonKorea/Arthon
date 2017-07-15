@@ -18,6 +18,7 @@ public class ChattingActivity extends AppCompatActivity {
     Context context;
     BroadcastReceiver mReceiver;
     ChatView chatView;
+    static boolean inForeground =true;
     public void receiveMessage(String data){
         chatView.addMessage(new ChatMessage(data, System.currentTimeMillis(), ChatMessage.Type.RECEIVED));
 
@@ -32,12 +33,19 @@ public class ChattingActivity extends AppCompatActivity {
         }
     };
     @Override
+    protected void onPause()
+    {
+        super.onPause();
+        inForeground=true;
+    }
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("s", "start");
         setContentView(R.layout.activity_main);
         IntentFilter intentfilter = new IntentFilter();
         intentfilter.addAction("root");
+        inForeground=false;
         mReceiver = new BroadcastReceiver(){
             @Override
             public void onReceive(Context context, Intent intent) {

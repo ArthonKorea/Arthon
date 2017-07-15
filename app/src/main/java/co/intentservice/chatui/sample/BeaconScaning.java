@@ -10,9 +10,11 @@ import android.bluetooth.BluetoothManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
+import android.support.v7.app.NotificationCompat;
 import android.util.Log;
 
 import java.util.HashMap;
@@ -45,35 +47,29 @@ public class BeaconScaning extends Service implements BluetoothAdapter.LeScanCal
 
                 //  alarmFlags.put(id,true);
                 String data = sub[1];
-                Intent intent = new Intent(BeaconScaning.this, MainActivity.class);
+                Intent intent = new Intent(BeaconScaning.this, ChattingActivity.class);
+                intent.putExtra("Data",data);
                 PendingIntent pendingIntent = PendingIntent.getActivity(BeaconScaning.this, 0, intent,PendingIntent.FLAG_UPDATE_CURRENT);
-
-                Notifi = new Notification.Builder(getApplicationContext())
-                        .setContentTitle("야생의 작품이 나타났다!")
-                        .setContentText(data)
-                        .setSmallIcon(R.drawable.ic_launcher_background)
-                        .setTicker("알림!!!")
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(BeaconScaning.this);
+                builder.setSmallIcon(R.drawable.ic_launcher_background)
+                        .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.ic_close_drawable))
+                        .setColor(getResources().getColor(R.color.blue))
+                        .setContentTitle("작품 "+id+"가 말을 걸어옵니다.")
                         .setContentIntent(pendingIntent)
-                        .build();
+                        .setContentText(data)
+                        .setDefaults(Notification.DEFAULT_ALL)
+                        .setPriority(Notification.PRIORITY_HIGH);
 
-                //소리추가
-                Notifi.defaults = Notification.DEFAULT_SOUND;
-
-                //알림 소리를 한번만 내도록
-                Notifi.flags = Notification.FLAG_ONLY_ALERT_ONCE;
-
-                //확인하면 자동으로 알림이 제거 되도록
-                Notifi.flags = Notification.FLAG_AUTO_CANCEL;
-
-
-                Notifi_M.notify( 777 , Notifi);
-
+                builder.setAutoCancel(true);
+                NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                mNotificationManager.notify(0, builder.build());
+                if(ChattingActivity.inForeground)
                 mHandler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         alarmFlags.remove(id);
                     }
-                },1000);
+                },3000);
             }
 
         }
@@ -128,7 +124,7 @@ public class BeaconScaning extends Service implements BluetoothAdapter.LeScanCal
                int id = idMap.get(beaconID);
 
                Log.d("Debug","Contains"+!alarmFlags.containsKey(id));
-               if(true)
+               if(!alarmFlags.containsKey(id))
                {
                    Log.d("Debug","Contains2");
                    alarmFlags.put(id,true);
