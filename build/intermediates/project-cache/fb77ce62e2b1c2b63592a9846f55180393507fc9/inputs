@@ -1,0 +1,6 @@
+COMMAND=PREDEX_LIBRARY_TO_DEX_ARCHIVE
+FILE_PATH=/Users/songchiyun/android-chat-ui/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar
+FILE_HASH=79da0dba7128dfae01751cd4f4400a32c6edf282
+DX_VERSION=1.13
+JUMBO_MODE=true
+OPTIMIZE=true
